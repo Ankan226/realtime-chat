@@ -119,7 +119,7 @@ Key design decisions:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/realtime-chat.git
+git clone https://github.com/Ankan226/realtime-chat
 cd realtime-chat
 ```
 
