@@ -1,4 +1,4 @@
-<h1 align="center">💬 Realtime Chat</h1>
+<h1 align="center">Realtime Chat</h1>
 
 <p align="center">
   A real-time, multi-room chat application built with <b>Node.js, Express, Socket.io and React</b>.<br/>
@@ -15,19 +15,18 @@
 
 ---
 
-## 🔗 Live Demo
+## Live Demo
 
 | | Link |
 |---|---|
-| 🌐 Live app (client) | `https://YOUR-APP.vercel.app` |
-| 🖥️ Server (API) | `https://YOUR-SERVER.onrender.com` |
-| 🎥 Demo video | `https://YOUR-VIDEO-LINK` |
+| Live app (client) | `https://YOUR-APP.vercel.app` |
+| Server (API) | `https://YOUR-SERVER.onrender.com` |
 
 > The server runs on a free tier and may sleep when idle. The first load can take 30-60 seconds.
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Join screen
 Users must choose a unique username and a room before connecting.
@@ -57,11 +56,12 @@ Messages in **General** never reach users in **Tech Support**, and the reverse.
 ### Server handshake logs
 The server logs every successful client handshake and room join.
 
-![alt text](image.png)
+<img width="368" height="225" alt="image" src="https://github.com/user-attachments/assets/a43e64a7-21a0-4d0c-8fe9-06013f073e0a" />
+
 
 ---
 
-## ✨ Features
+## Features
 
 **Phase 1: WebSocket base**
 - Socket.io server on Node/Express that logs each client handshake
@@ -70,7 +70,6 @@ The server logs every successful client handshake and room join.
 
 **Phase 2: Session identity and events**
 - Unique username required before connecting (duplicates rejected, case-insensitive)
-- Messages rendered as `[Nakul]: Hello world!`
 - Keyboard-driven typing indicator shown on all other clients in the room
 
 **Phase 3: Channels and routing**
@@ -88,18 +87,8 @@ The server logs every successful client handshake and room join.
 
 ---
 
-## 🧰 Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Server | Node.js, Express, Socket.io, cors |
-| Client | React 18, Vite, socket.io-client |
-| Styling | Plain CSS |
-| Hosting | Render (server), Vercel (client) |
-
----
-
-## 🏗️ How It Works
+## How It Works
 
 ```
 ┌────────────────┐   WebSocket (Socket.io)   ┌────────────────────┐
@@ -119,37 +108,10 @@ Key design decisions:
 - **Rooms** use Socket.io's built-in `socket.join(room)` and `io.to(room).emit(...)`, so isolation is enforced on the server rather than filtered in the browser.
 - **Acknowledgements**: `join_room` uses a callback, so the client learns immediately whether the join succeeded and receives the room history.
 
----
-
-## 📁 Project Structure
-
-```
-realtime-chat/
-├── README.md
-├── Prompts.md
-├── .gitignore
-├── docs/
-│   └── screenshots/          # images used in this README
-├── server/
-│   ├── package.json
-│   └── index.js              # Express + Socket.io server
-└── client/
-    ├── package.json
-    ├── vite.config.js
-    ├── index.html
-    └── src/
-        ├── main.jsx
-        ├── App.jsx
-        ├── socket.js         # single shared socket instance
-        ├── index.css
-        └── components/
-            ├── JoinScreen.jsx
-            └── ChatRoom.jsx
-```
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js 18 or newer
@@ -157,7 +119,7 @@ realtime-chat/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/<your-username>/realtime-chat.git
+git clone https://github.com/Ankan226/realtime-chat
 cd realtime-chat
 ```
 
@@ -182,19 +144,7 @@ Open `http://localhost:5173` in **two different browser windows** (for example o
 
 ---
 
-## ⚙️ Environment Variables
-
-| Where | Variable | Default | Purpose |
-|---|---|---|---|
-| Server | `PORT` | `5000` | Port the server listens on |
-| Server | `CLIENT_ORIGIN` | `http://localhost:5173,http://localhost:3000` | Comma-separated list of allowed client origins (CORS) |
-| Client | `VITE_SERVER_URL` | `http://localhost:5000` | URL of the Socket.io server |
-
-For local development no `.env` files are needed. For production, set `CLIENT_ORIGIN` on Render to your exact Vercel URL (no trailing slash), and set `VITE_SERVER_URL` on Vercel to your Render URL.
-
----
-
-## 📡 Socket Events
+## Socket Events
 
 | Event | Direction | Payload | Description |
 |---|---|---|---|
@@ -209,7 +159,7 @@ For local development no `.env` files are needed. For production, set `CLIENT_OR
 
 ---
 
-## 🧪 How to Test
+## How to Test
 
 1. Open two windows side by side at `http://localhost:5173`.
 2. **Identity:** join as `Nakul` in one window, then try `Nakul` in the other. You should see an error. Join as `Riya` instead.
@@ -221,7 +171,7 @@ For local development no `.env` files are needed. For production, set `CLIENT_OR
 
 ---
 
-## ☁️ Deployment
+## Deployment
 
 **Server (Render)**
 1. New → Web Service, connect the repo.
@@ -237,28 +187,16 @@ For local development no `.env` files are needed. For production, set `CLIENT_OR
 
 ---
 
-## 🛠️ Troubleshooting
-
-| Problem | Fix |
-|---|---|
-| CORS error in the console | Make sure `CLIENT_ORIGIN` on the server exactly matches the client URL, including `https://` and with no trailing slash |
-| Client cannot connect in production | Check that `VITE_SERVER_URL` points to the deployed server, then redeploy the client |
-| First request is very slow | The free-tier server was asleep. Open the server URL once to wake it |
-| Port already in use | Run the server with a different port (`PORT=5001`) and set `VITE_SERVER_URL` in `client/.env` to match |
-| Blank page in the VS Code preview | Open `http://localhost:5173` in a normal browser instead |
-| Vite deprecation warnings | Run `npm install -D @vitejs/plugin-react@latest` in `client/` |
 
 ---
 
-## 📝 AI Usage
+## AI Usage
 
 AI assistance was used for parts of this project. The prompt strategy, the issues encountered and how they were resolved are documented in [Prompts.md](./Prompts.md).
 
 ---
 
-## 👤 Author
+## Author
 
-**[Your Name]**
-- GitHub: [@your-username](https://github.com/your-username)
-
-Built for Sprint 12, Phase 4: Advanced Integration.
+**Ankan Pal**
+- GitHub: https://github.com/Ankan226/realtime-chat
