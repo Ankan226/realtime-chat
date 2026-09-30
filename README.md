@@ -70,7 +70,6 @@ The server logs every successful client handshake and room join.
 
 **Phase 2: Session identity and events**
 - Unique username required before connecting (duplicates rejected, case-insensitive)
-- Messages rendered as `[Nakul]: Hello world!`
 - Keyboard-driven typing indicator shown on all other clients in the room
 
 **Phase 3: Channels and routing**
