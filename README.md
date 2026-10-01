@@ -26,41 +26,6 @@
 
 ---
 
-## Screenshots
-
-### Join screen
-Users must choose a unique username and a room before connecting.
-
-![Join screen](docs/screenshots/01-join-screen.png)
-
-### Duplicate username protection
-The server rejects a username that is already in use.
-
-![Duplicate username error](docs/screenshots/02-duplicate-username.png)
-
-### Live bidirectional chat
-Messages are sent to the server and instantly broadcast back to everyone in the room, formatted as `[Name]: message`.
-
-![Live chat](docs/screenshots/03-live-chat.png)
-
-### Typing indicator
-A keyboard event on the client emits a `typing` event, and the server relays it so other users see "Nakul is typing...".
-
-![Typing indicator](docs/screenshots/04-typing-indicator.png)
-
-### Room isolation
-Messages in **General** never reach users in **Tech Support**, and the reverse.
-
-![Room isolation](docs/screenshots/05-room-isolation.png)
-
-### Server handshake logs
-The server logs every successful client handshake and room join.
-
-<img width="368" height="225" alt="image" src="https://github.com/user-attachments/assets/a43e64a7-21a0-4d0c-8fe9-06013f073e0a" />
-
-
----
-
 ## Features
 
 **Phase 1: WebSocket base**
