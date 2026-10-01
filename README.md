@@ -19,8 +19,8 @@
 
 | | Link |
 |---|---|
-| Live app (client) | `https://YOUR-APP.vercel.app` |
-| Server (API) | `https://YOUR-SERVER.onrender.com` |
+| Live app (client) | `https://realtime-chat-alpha-ashen.vercel.app` |
+| Server (API) | `https://realtime-chat-server-45x1.onrender.com` |
 
 > The server runs on a free tier and may sleep when idle. The first load can take 30-60 seconds.
 
